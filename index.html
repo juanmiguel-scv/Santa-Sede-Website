@@ -1,218 +1,178 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página oficial de la Santa Sede, sede de la Iglesia Católica en el Vaticano.">
-    <meta name="keywords" content="Santa Sede, Vaticano, Iglesia Católica, Papa">
-    <meta name="author" content="Santa Sede">
-    <meta property="og:title" content="Santa Sede - Página Oficial">
-    <meta property="og:description" content="Información sobre la Santa Sede, noticias y contacto.">
-    <meta property="og:type" content="website">
-    <title>Santa Sede - Página Oficial</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Georgia', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #fff;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        header img {
-            width: 100px;
-        }
-        nav {
-            background-color: #8b0000;
-            padding: 10px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .welcome, .about, .news, .contact {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-        .welcome {
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .contact form {
-            display: flex;
-            flex-direction: column;
-        }
-        .contact input, .contact textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact button {
-            background-color: #8b0000;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: fit-content;
-        }
-        .contact button:hover {
-            background-color: #a30000;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-        footer a {
-            color: #ffd700;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-            }
-            nav ul li {
-                margin: 10px 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página oficial de la Santa Sede, sede de la Iglesia Católica en el Vaticano.">
+  <meta name="keywords" content="Santa Sede, Vaticano, Iglesia Católica, Papa">
+  <meta name="author" content="Santa Sede">
+  <meta property="og:title" content="Santa Sede - Página Oficial">
+  <meta property="og:description" content="Información sobre la Santa Sede, noticias y contacto.">
+  <meta property="og:type" content="website">
+  <title>Santa Sede - Página Oficial</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      background-color: #8b0000;
+      padding: 10px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .welcome, .about, .news, .contact, .member-management {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    .welcome {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .contact button {
+      background-color: #8b0000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: fit-content;
+    }
+    .contact button:hover {
+      background-color: #a30000;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="https://media.discordapp.net/attachments/1331843820551409746/1386406463597052025/AUA-removebg-preview.png?ex=68599723&is=685845a3&hm=8507ab91d0c637ceefa84569c29876034bc4c78677b2055d210b4d5ab585979b&=&format=webp&quality=lossless&width=310&height=453" alt="Escudo de la Santa Sede">
-        <h1>Santa Sede</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#acerca">Acerca</a></li>
-            <li><a href="#noticias">Noticias</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <section id="inicio" class="welcome">
-            <h2>Bienvenidos a la Santa Sede</h2>
-            <p>La Santa Sede, corazón de la Iglesia Católica, guía a millones de fieles en todo el mundo desde el Vaticano, promoviendo la fe y la unidad.</p>
-        </section>
-        <section id="acerca" class="about">
-            <h2>Acerca de la Santa Sede</h2>
-            <p>La Santa Sede es la autoridad suprema de la Iglesia Católica, liderada por el Papa. Su misión es promover los valores cristianos, la moral y la unidad, además de desempeñar un papel diplomático en la comunidad internacional.</p>
-            <p>Con una historia milenaria, la Santa Sede continúa siendo un faro de esperanza y guía espiritual para la humanidad.</p>
-        </section>
-        <section id="noticias" class="news">
-            <h2>Noticias</h2>
-            <p>https://docs.google.com/document/d/1YCKoPjdpCqvlNIx5Oy0At_e0aNF6oRbc8j_ZqwxmCpA/edit?usp=sharing
-</p>
-        </section>
-        <section id="contacto" class="contact">
-            <h2>Contacto</h2>
-            <form action="https://formspree.io/f/myzjnkvr" method="POST">
-                <input type="text" name="name" placeholder="Nombre" required>
-                <input type="email" name="email" placeholder="Correo Electrónico" required>
-                <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
-                <button type="submit">Enviar Mensaje</button>
-            </form>
-        </section>
-    </div>
-    <footer>
-        <p>© 2025 Santa Sede. Todos los derechos reservados.</p>
-        <p>
-            <a href="https://twitter.com">Twitter</a> |
-            <a href="https://vatican.va">Sitio Oficial</a>
-        </p>
-    </footer>
-    <script>
-        // Smooth scroll para los enlaces de navegación
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-        <section id="member-management">
-  <h2>Regístrate en nuestra comunidad</h2>
-  <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScRQscqk_VRluYNgqMPQpEkOvOVdlEt2RS4DjNsswfxzoswiQ/viewform?usp=dialog" target="_blank">Haz clic aquí para registrarte</a></p>
-</section>    
-            });
-        });
-    </script>
+  <header>
+    <h1>Santa Sede</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#acerca">Acerca</a></li>
+      <li><a href="#noticias">Noticias</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#member-management">Registro</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <section id="inicio" class="welcome">
+      <h2>Bienvenidos a la Santa Sede</h2>
+      <p>La Santa Sede, corazón de la Iglesia Católica, guía a millones de fieles en todo el mundo desde el Vaticano, promoviendo la fe y la unidad.</p>
+    </section>
+    <section id="acerca" class="about">
+      <h2>Acerca de la Santa Sede</h2>
+      <p>La Santa Sede es la autoridad suprema de la Iglesia Católica, liderada por el Papa. Su misión es promover los valores cristianos, la moral y la unidad, además de desempeñar un papel diplomático en la comunidad internacional.</p>
+      <p>Con una historia milenaria, la Santa Sede continúa siendo un faro de esperanza y guía espiritual para la humanidad.</p>
+    </section>
+    <section id="noticias" class="news">
+      <h2>Noticias</h2>
+      <p><a href="https://docs.google.com/document/d/1YCKoPjdpCqvlNIx5Oy0At_e0aNF6oRbc8j_ZqwxmCpA/edit?usp=sharing" target="_blank">Noticias oficiales</a></p>
+    </section>
+    <section id="contacto" class="contact">
+      <h2>Contacto</h2>
+      <form action="https://formspree.io/f/myzjnkvr" method="POST">
+        <input type="text" name="name" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Correo Electrónico" required>
+        <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+    </section>
+    <section id="member-management" class="member-management">
+      <h2>Regístrate en nuestra comunidad</h2>
+      <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScRQscqk_VRluYNgqMPQpEkOvOVdlEt2RS4DjNsswfxzoswiQ/viewform?usp=dialog" target="_blank">Haz clic aquí para registrarte</a></p>
+    </section>
+  </div>
+  <footer>
+    <p>© 2025 Santa Sede. Todos los derechos reservados.</p>
+    <p>
+      <a href="https://twitter.com">Twitter</a> |
+      <a href="https://vatican.va">Sitio Oficial</a>
+    </p>
+  </footer>
+  <script>
+    // Smooth scroll para los enlaces de navegación
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
