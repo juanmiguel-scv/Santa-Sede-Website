@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>Santa Sede | Sede Apostólica y Estado del Vaticano</title>
     <meta name="description" content="Portal oficial de la Santa Sede. Acceda a las enseñanzas del Santo Padre, los dicasterios de la Curia Romana y los documentos oficiales del Magisterio.">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Times+New+Roman:wght@400;700&display=swap" rel="stylesheet">
@@ -22,10 +21,6 @@
             --font-body: 'Times New Roman', Times, serif;
         }
 
-=======
-    <title>Santa Sede - Vaticano</title>
-    <style>
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
         * {
             margin: 0;
             padding: 0;
@@ -33,7 +28,6 @@
         }
 
         body {
-<<<<<<< HEAD
             font-family: var(--font-body);
             line-height: 1.8; 
             color: var(--color-text-dark);
@@ -53,49 +47,10 @@
             padding: 5rem 0 3.5rem;
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7); 
             border-bottom: 10px solid var(--color-gold); 
-=======
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f8f6f0 0%, #e8e4d6 100%);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #8B0000 0%, #660000 100%);
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 4px 20px rgba(139, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
-            opacity: 0.3;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 2;
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
             text-align: center;
         }
 
         .vatican-emblem {
-<<<<<<< HEAD
             width: 150px; 
             height: 150px;
             margin: 0 auto 1.5rem;
@@ -103,7 +58,6 @@
             display: block;
             border: 9px solid white;
             box-shadow: 0 0 45px rgba(192, 161, 107, 1);
-            /* Uso del archivo Sello papal.jpg subido */
             background-image: url('Sello papal.jpg'); 
             background-size: cover;
             background-position: center;
@@ -136,63 +90,19 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-=======
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1rem;
-            background: #FFD700;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #8B0000;
-            border: 4px solid white;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            font-weight: normal;
-            letter-spacing: 2px;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-style: italic;
-        }
-
-        /* Navigation */
-        nav {
-            background: rgba(139, 0, 0, 0.9);
-            padding: 1rem 0;
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
         }
 
         .nav-menu {
             display: flex;
             justify-content: center;
             list-style: none;
-<<<<<<< HEAD
             gap: 4rem;
-=======
-            gap: 2rem;
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
             flex-wrap: wrap;
         }
 
         .nav-menu li a {
             color: white;
             text-decoration: none;
-<<<<<<< HEAD
             padding: 1rem 2rem;
             transition: all 0.3s ease;
             font-weight: 700;
@@ -439,306 +349,15 @@
             .pope-section { padding: 3rem 1.5rem; }
             .service-btn { padding: 15px 35px; font-size: 1.2rem; }
         }
-=======
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .nav-menu li a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        /* Main Content */
-        main {
-            padding: 4rem 0;
-        }
-
-        .hero-section {
-            text-align: center;
-            margin-bottom: 4rem;
-            padding: 3rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .hero-section h2 {
-            font-size: 2.5rem;
-            color: #8B0000;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .hero-section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, #FFD700, #8B0000);
-            border-radius: 2px;
-        }
-
-        .hero-text {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 800px;
-            margin: 2rem auto;
-            line-height: 1.8;
-        }
-
-        /* Cards Section */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(139, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #8B0000, #FFD700);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(139, 0, 0, 0.15);
-        }
-
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #8B0000, #660000);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .card h3 {
-            color: #8B0000;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Pope Section */
-        .pope-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 4rem 0;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        .pope-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #8B0000, #660000);
-            margin: 0 auto 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-            border: 6px solid #FFD700;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-        }
-
-        /* Services Section */
-        .services-section {
-            margin: 4rem 0;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(139, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #8B0000, #FFD700);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(139, 0, 0, 0.15);
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #8B0000, #660000);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 1.5rem;
-            border: 4px solid #FFD700;
-        }
-
-        .service-btn {
-            background: linear-gradient(135deg, #8B0000, #660000);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 1rem;
-        }
-
-        .service-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(139, 0, 0, 0.3);
-            background: linear-gradient(135deg, #660000, #8B0000);
-        }
-        footer {
-            background: linear-gradient(135deg, #333 0%, #222 100%);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            color: #FFD700;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .footer-section p, .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            line-height: 1.8;
-        }
-
-        .footer-section a:hover {
-            color: #FFD700;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #444;
-            padding-top: 2rem;
-            opacity: 0.8;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .nav-menu {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .hero-section h2 {
-                font-size: 2rem;
-            }
-            
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .card {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .card:nth-child(2) { animation-delay: 0.2s; }
-        .card:nth-child(3) { animation-delay: 0.4s; }
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="header-content">
-<<<<<<< HEAD
                 <div class="vatican-emblem" title="Sello Apostólico de la Santa Sede"></div>
                 <h1>SANTA SEDE</h1>
-                <p class="subtitle">Estado de la Ciudad del Vaticano | Aeternum Lumen et Veritas (Luz Eterna y Verdad)</p>
-=======
-                <div class="vatican-emblem">☩</div>
-                <h1>SANTA SEDE</h1>
-                <p class="subtitle">Estado de la Ciudad del Vaticano</p>
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
+                <p class="subtitle">Estado de la Ciudad del Vaticano | **Aeternum Lumen et Veritas** (Luz Eterna y Verdad)</p>
             </div>
         </div>
     </header>
@@ -746,20 +365,10 @@
     <nav>
         <div class="container">
             <ul class="nav-menu">
-<<<<<<< HEAD
                 <li><a href="#inicio">PORTAL OFICIAL</a></li>
                 <li><a href="#santo-padre">MAGISTERIO</a></li>
                 <li><a href="#curia">CURIA ROMANA</a></li>
                 <li><a href="#servicios">SERVICIOS</a></li>
-=======
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#santo-padre">Santo Padre</a></li>
-                <li><a href="#magisterio">Magisterio</a></li>
-                <li><a href="#dicasterios">Dicasterios</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#noticias">Noticias</a></li>
-                <li><a href="#contacto">Contacto</a></li>
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
             </ul>
         </div>
     </nav>
@@ -767,10 +376,9 @@
     <main>
         <div class="container">
             <section class="hero-section" id="inicio">
-<<<<<<< HEAD
                 <h2 class="section-title" style="margin-bottom: 2rem;">Autoridad Universal de la Iglesia</h2>
                 <p class="hero-text">
-                    La Santa Sede es el centro neurálgico de la Fe Católica, la sede episcopal de Roma y el gobierno del Estado de la Ciudad del Vaticano. Este portal sirve como la única fuente autorizada para el Magisterio del Sumo Pontífice, los actos de la Curia Romana y los documentos que rigen la vida eclesial a nivel global.
+                    La **Santa Sede** es el centro neurálgico de la Fe Católica, la sede episcopal de Roma y el gobierno del Estado de la Ciudad del Vaticano. Este portal sirve como la única fuente autorizada para el **Magisterio del Sumo Pontífice**, los actos de la Curia Romana y los documentos que rigen la vida eclesial a nivel global.
                 </p>
                 <div style="font-size: 1.9rem; font-weight: 700; color: var(--color-cardenal-dark); margin-top: 4rem; font-family: var(--font-serif); font-style: italic;">
                     "Ego sum lux mundi." (Yo soy la luz del mundo.)
@@ -861,126 +469,6 @@
                                 scrolling="no">
                         </iframe>
                         <button onclick="toggleCalendar()" class="service-btn" style="background: #444; border-color: #333; display: block; margin: 2rem auto 0; font-size: 1.1rem; padding: 14px 40px;">CERRAR</button>
-=======
-                <h2>Bienvenidos al Sitio Oficial de la Santa Sede</h2>
-                <p class="hero-text">
-                    La Santa Sede es el gobierno central de la Iglesia Católica. Desde la Ciudad del Vaticano, 
-                    el Santo Padre guía a más de mil millones de católicos en todo el mundo, promoviendo la paz, 
-                    la justicia y la caridad. Aquí encontrará las enseñanzas, documentos oficiales y noticias 
-                    del Pontificado.
-                </p>
-            </section>
-
-            <section class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">📜</div>
-                    <h3>Documentos Pontificios</h3>
-                    <p>Acceda a las encíclicas, cartas apostólicas, constituciones y demás documentos del Magisterio Pontificio. Encuentre las enseñanzas oficiales de la Iglesia sobre fe, moral y doctrina social.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">🏛️</div>
-                    <h3>Dicasterios Vaticanos</h3>
-                    <p>Conozca los diferentes dicasterios y organismos de la Curia Romana que asisten al Santo Padre en el gobierno de la Iglesia universal, desde la Secretaría de Estado hasta las Congregaciones.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">📺</div>
-                    <h3>Audiencias y Ceremonias</h3>
-                    <p>Siga en vivo las audiencias generales, celebraciones litúrgicas y eventos especiales presididos por el Santo Padre. Manténgase conectado con la vida del Vaticano.</p>
-                </div>
-            </section>
-
-            <section class="pope-section" id="santo-padre">
-                <div class="pope-image">♰</div>
-                <h2 style="color: #8B0000; margin-bottom: 1rem;">Su Santidad Pío XIII</h2>
-                <p style="font-size: 1.1rem; color: #555; max-width: 700px; margin: 0 auto; line-height: 1.8;">
-                    El Sucesor de Pedro, Vicario de Cristo en la tierra, Pastor Universal de la Iglesia Católica. 
-                    Su Santidad Pío XIII ejerce su ministerio petrino desde la Sede Apostólica al servicio de toda la humanidad, 
-                    proclamando el Evangelio de Jesucristo y promoviendo la fraternidad universal.
-                </p>
-            </section>
-
-            <!-- Sección de Registro y Calendario -->
-            <section class="services-section">
-                <div class="container">
-                    <h2 style="text-align: center; color: #8B0000; margin-bottom: 3rem; font-size: 2.5rem;">Servicios y Registro</h2>
-                    
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <div class="service-icon">📝</div>
-                            <h3>Registro de Fieles</h3>
-                            <p>Complete el formulario oficial para registrarse en los servicios de la Santa Sede y recibir comunicaciones oficiales.</p>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScRQscqk_VRluYNgqMPQpEkOvOVdlEt2RS4DjNsswfxzoswiQ/viewform" target="_blank" class="service-btn">Registrarse Ahora</a>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">📅</div>
-                            <h3>Calendario Litúrgico</h3>
-                            <p>Consulte las fechas importantes, celebraciones pontificias, audiencias y eventos especiales del año litúrgico.</p>
-                            <button onclick="toggleCalendar()" class="service-btn">Ver Calendario</button>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">✉️</div>
-                            <h3>Contacto Directo</h3>
-                            <p>Comuníquese directamente con la Santa Sede a través de nuestro formulario oficial de contacto.</p>
-                            <button onclick="showContactForm()" class="service-btn">Contactar</button>
-                        </div>
-                    </div>
-
-                    <!-- Calendario integrado (inicialmente oculto) -->
-                    <div id="calendar-container" style="display: none; margin-top: 3rem;">
-                        <div style="background: rgba(255,255,255,0.95); border-radius: 15px; padding: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
-                            <h3 style="color: #8B0000; text-align: center; margin-bottom: 2rem;">Calendario Oficial de la Santa Sede</h3>
-                            <iframe src="https://calendar.google.com/calendar/embed?src=93c19ec2ceeb059c1cd92ae435b3bff0a1749ca2604b9b017745f431f7f36289%40group.calendar.google.com&ctz=America%2FBogota" 
-                                    style="border: 0; width: 100%; height: 600px; border-radius: 10px;" 
-                                    frameborder="0" 
-                                    scrolling="no">
-                            </iframe>
-                            <button onclick="toggleCalendar()" style="margin-top: 1rem; background: #8B0000; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Cerrar Calendario</button>
-                        </div>
-                    </div>
-
-                    <!-- Formulario de contacto (inicialmente oculto) -->
-                    <div id="contact-form-container" style="display: none; margin-top: 3rem;">
-                        <div style="background: rgba(255,255,255,0.95); border-radius: 15px; padding: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
-                            <h3 style="color: #8B0000; text-align: center; margin-bottom: 2rem;">Formulario de Contacto</h3>
-                            <form action="https://formspree.io/f/myzjnkvr" method="POST" style="max-width: 600px; margin: 0 auto;">
-                                <div style="margin-bottom: 1.5rem;">
-                                    <label style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: bold;">Nombre Completo:</label>
-                                    <input type="text" name="nombre" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
-                                </div>
-                                
-                                <div style="margin-bottom: 1.5rem;">
-                                    <label style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: bold;">Correo Electrónico:</label>
-                                    <input type="email" name="email" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
-                                </div>
-
-                                <div style="margin-bottom: 1.5rem;">
-                                    <label style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: bold;">Asunto:</label>
-                                    <select name="asunto" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
-                                        <option value="">Seleccione un asunto</option>
-                                        <option value="audiencia">Solicitud de Audiencia</option>
-                                        <option value="bendicion">Solicitud de Bendición</option>
-                                        <option value="consulta">Consulta Teológica</option>
-                                        <option value="donacion">Información sobre Donaciones</option>
-                                        <option value="otro">Otro</option>
-                                    </select>
-                                </div>
-
-                                <div style="margin-bottom: 1.5rem;">
-                                    <label style="display: block; margin-bottom: 0.5rem; color: #333; font-weight: bold;">Mensaje:</label>
-                                    <textarea name="mensaje" required rows="6" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; resize: vertical;" placeholder="Escriba su mensaje aquí..."></textarea>
-                                </div>
-
-                                <div style="text-align: center;">
-                                    <button type="submit" style="background: linear-gradient(135deg, #8B0000, #660000); color: white; border: none; padding: 15px 40px; border-radius: 25px; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease;">Enviar Mensaje</button>
-                                    <button type="button" onclick="hideContactForm()" style="background: #666; color: white; border: none; padding: 15px 40px; border-radius: 25px; font-size: 1.1rem; cursor: pointer; margin-left: 1rem;">Cancelar</button>
-                                </div>
-                            </form>
-                        </div>
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
                     </div>
                 </div>
             </section>
@@ -991,7 +479,6 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-<<<<<<< HEAD
                     <h4>Contacto Oficial</h4>
                     <p>Estado de la Ciudad del Vaticano<br>
                     00120 Città del Vaticano</p>
@@ -1006,26 +493,10 @@
                         <a href="mailto:piusxiivatican.va@gmail.com" target="_blank" style="color: var(--color-gold); font-weight: 700; text-decoration: underline;">
                             piusxiivatican.va@gmail.com
                         </a>
-=======
-                    <h4>Santa Sede</h4>
-                    <p>Estado de la Ciudad del Vaticano<br>
-                    00120 Città del Vaticano<br>
-                    Tel: +39 06 6982</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Enlaces Importantes</h4>
-                    <p>
-                        <a href="#">Vatican News</a><br>
-                        <a href="#">Museos Vaticanos</a><br>
-                        <a href="#">Biblioteca Apostólica</a><br>
-                        <a href="#">Radio Vaticana</a>
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
                     </p>
                 </div>
                 
                 <div class="footer-section">
-<<<<<<< HEAD
                     <h4>Instituciones Vínculo</h4>
                     <a href="#">Vatican News</a>
                     <a href="#">L'Osservatore Romano</a>
@@ -1037,53 +508,31 @@
                     <h4>Archivos y Leyes</h4>
                     <a href="#">Código de Derecho Canónico</a>
                     <a href="#">Documentos del Concilio</a>
-                    <a href="https://juanmiguel-scv.github.io/Recursos-Eclesi-sticos" target="_blank">ARCHIVO SECRETO APOSTÓLICO</a>
+                    <a href="https://juanmiguel-scv.github.io/Recursos-Eclesi-sticos" target="_blank">**ARCHIVO SECRETO APOSTÓLICO**</a>
                     <a href="#">Reglamento Jurídico Estatal</a>
-=======
-                    <h4>Redes Sociales</h4>
-                    <p>
-                        <a href="#">Twitter Oficial</a><br>
-                        <a href="#">YouTube Vatican</a><br>
-                        <a href="#">Instagram</a><br>
-                        <a href="#">Facebook</a>
-                    </p>
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
                 </div>
             </div>
             
             <div class="footer-bottom">
-<<<<<<< HEAD
-                <p>&copy; 2025 Santa Sede. Todos los derechos reservados. | Aviso Legal y de Confidencialidad.</p>
-=======
-                <p>&copy; 2025 Santa Sede - Estado de la Ciudad del Vaticano. Todos los derechos reservados.</p>
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
+                <p>&copy; 2025 Santa Sede. Todos los derechos reservados. | **Aviso Legal y de Confidencialidad**.</p>
             </div>
         </div>
     </footer>
 
     <script>
-<<<<<<< HEAD
         const navHeight = document.querySelector('nav').offsetHeight;
 
         // Mostrar/Ocultar Calendario
-=======
-        // Funciones para mostrar/ocultar calendario y formulario
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
         function toggleCalendar() {
             const calendar = document.getElementById('calendar-container');
             if (calendar.style.display === 'none') {
                 calendar.style.display = 'block';
-<<<<<<< HEAD
                 calendar.scrollIntoView({ behavior: 'smooth', block: 'start' });
-=======
-                calendar.scrollIntoView({ behavior: 'smooth' });
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
             } else {
                 calendar.style.display = 'none';
             }
         }
 
-<<<<<<< HEAD
         // Manejo de scroll para la navegación
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1096,55 +545,17 @@
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
-=======
-        function showContactForm() {
-            const form = document.getElementById('contact-form-container');
-            form.style.display = 'block';
-            form.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function hideContactForm() {
-            const form = document.getElementById('contact-form-container');
-            form.style.display = 'none';
-        }
-
-        // Navegación suave
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
                     });
                 }
             });
         });
 
-<<<<<<< HEAD
         // Animación de entrada al hacer scroll
-=======
-        // Efectos de hover en las tarjetas
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Animación de entrada para elementos
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
-<<<<<<< HEAD
                     entry.target.style.transitionDelay = entry.target.dataset.delay || '0s';
                     observer.unobserve(entry.target); 
                 }
@@ -1158,27 +569,6 @@
             el.dataset.delay = `${index * 0.2}s`; 
             observer.observe(el);
         });
-=======
-                }
-            });
-        });
-
-        document.querySelectorAll('.card, .hero-section, .pope-section').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-
-        // Efecto parallax sutil en el header
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const header = document.querySelector('header');
-            if (header) {
-                header.style.transform = `translateY(${scrolled * 0.3}px)`;
-            }
-        });
->>>>>>> 4dcc0bb4c36276ced2747877e9d82e2b8f4fdc5b
     </script>
 </body>
 </html>
