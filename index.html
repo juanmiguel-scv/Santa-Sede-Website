@@ -1,183 +1,575 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Página oficial de la Santa Sede, sede de la Iglesia Católica en el Vaticano.">
-  <meta name="keywords" content="Santa Sede, Vaticano, Iglesia Católica, Papa">
-  <meta name="author" content="Santa Sede">
-  <meta property="og:title" content="Santa Sede - Página Oficial">
-  <meta property="og:description" content="Información sobre la Santa Sede, noticias y contacto.">
-  <meta property="og:type" content="website">
-  <title>Santa Sede - Página Oficial</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Georgia', serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background-color: #fff;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      margin: 0;
-    }
-    nav {
-      background-color: #8b0000;
-      padding: 10px;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-    }
-    nav ul li {
-      margin: 0 15px;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .welcome, .about, .news, .contact, .member-management, .events {
-      background-color: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-    }
-    .welcome {
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .contact form {
-      display: flex;
-      flex-direction: column;
-    }
-    .contact input, .contact textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .contact button {
-      background-color: #8b0000;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      width: fit-content;
-    }
-    .contact button:hover {
-      background-color: #a30000;
-    }
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-    }
-    footer a {
-      color: #ffd700;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        text-align: center;
-      }
-      nav ul li {
-        margin: 10px 0;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa Sede | Sede Apostólica y Estado del Vaticano</title>
+    <meta name="description" content="Portal oficial de la Santa Sede. Acceda a las enseñanzas del Santo Padre, los dicasterios de la Curia Romana y los documentos oficiales del Magisterio.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Times+New+Roman:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================= */
+        /* PALETA Y FONDOS (Máxima Solemnidad) */
+        /* ========================================= */
+        :root {
+            --color-cardenal-dark: #580000;      /* Borgoña Extra Profundo */
+            --color-cardenal-light: #940000;     /* Rojo Cardenal Intenso */
+            --color-gold: #C0A16B;               /* Oro Viejo Mate */
+            --color-background-cream: #FFFBF5;   /* Fondo casi blanco, muy sutil */
+            --color-text-dark: #1A1A1A;
+            --color-text-light: #444444;
+            --font-serif: 'Playfair Display', serif;
+            --font-body: 'Times New Roman', Times, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.8; 
+            color: var(--color-text-dark);
+            background-color: var(--color-background-cream);
+        }
+
+        .container {
+            max-width: 1150px; 
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* --- HEADER (Máxima Autoridad) --- */
+        header {
+            background: linear-gradient(170deg, var(--color-cardenal-dark) 0%, var(--color-cardenal-light) 100%);
+            color: white;
+            padding: 5rem 0 3.5rem;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7); 
+            border-bottom: 10px solid var(--color-gold); 
+            text-align: center;
+        }
+
+        .vatican-emblem {
+            width: 150px; 
+            height: 150px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            display: block;
+            border: 9px solid white;
+            box-shadow: 0 0 45px rgba(192, 161, 107, 1);
+            /* Uso del archivo Sello papal.jpg subido */
+            background-image: url('Sello papal.jpg'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 5.2rem; 
+            margin-bottom: 0.3rem;
+            text-shadow: 5px 5px 10px rgba(0,0,0,0.7);
+            font-weight: 900;
+            letter-spacing: 8px; 
+            color: var(--color-gold);
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.9rem;
+            opacity: 0.98;
+            font-style: italic;
+            color: #FFECB3;
+            font-weight: 400;
+        }
+
+        /* --- NAVEGACIÓN (Consistente) --- */
+        nav {
+            background: var(--color-cardenal-dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: var(--font-body);
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-menu li a:hover {
+            color: var(--color-gold);
+            border-bottom: 2px solid var(--color-gold);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* --- MAIN CONTENT --- */
+        main {
+            padding: 7rem 0;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 3.8rem;
+            color: var(--color-cardenal-dark);
+            text-align: center;
+            margin-bottom: 6rem;
+            position: relative;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 6px; 
+            background: var(--color-gold);
+            border-radius: 3px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 8rem;
+            padding: 7rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3); 
+            border: 5px double var(--color-cardenal-dark); 
+        }
+
+        .hero-text {
+            font-size: 1.5rem;
+            color: var(--color-text-light);
+            max-width: 950px;
+            margin: 3rem auto;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        /* --- POPE & MAGISTERIUM --- */
+        .pope-section {
+            background: #FFFFFF;
+            border-radius: 25px;
+            padding: 6rem;
+            margin: 8rem 0;
+            text-align: center;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.25);
+            border: 4px solid var(--color-gold);
+        }
+
+        .pope-image {
+            width: 200px; 
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 3.5rem;
+            border: 12px solid var(--color-gold);
+            box-shadow: 0 0 50px rgba(192, 161, 107, 1);
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="50" fill="white">♰</text></svg>');
+            background-color: var(--color-cardenal-dark);
+            background-size: cover;
+        }
+
+        /* Tarjeta de Documento Único */
+        .document-card {
+            background: #FAFAFA;
+            border: 2px solid var(--color-cardenal-dark);
+            border-left: 15px solid var(--color-cardenal-dark); 
+            padding: 4rem;
+            text-align: left;
+            margin: 0 auto;
+            max-width: 950px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+        }
+        
+        .document-card:hover {
+            border-left-color: var(--color-gold);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+
+        .document-card h4 {
+            color: var(--color-gold);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: var(--font-body);
+            letter-spacing: 1px;
+        }
+
+        .document-card p {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--color-cardenal-dark);
+            margin-bottom: 2.5rem;
+            font-family: var(--font-serif);
+        }
+
+        /* --- GRID Y CARDS --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 4rem;
+            margin: 5rem 0;
+        }
+
+        .card {
+            background: #FFFFFF;
+            border-radius: 10px;
+            padding: 3.5rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            transition: all 0.4s ease-out;
+            border-top: 6px solid var(--color-cardenal-light);
+            text-align: center; 
+        }
+
+        .card:hover {
+            transform: scale(1.03); 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+            border-top-color: var(--color-gold);
+        }
+
+        .card-icon {
+            color: var(--color-cardenal-light);
+            font-size: 4rem; 
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            color: var(--color-cardenal-dark);
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            font-family: var(--font-serif);
+            font-weight: 900;
+        }
+
+        /* --- BOTONES --- */
+        .service-btn {
+            background: linear-gradient(135deg, var(--color-cardenal-light), var(--color-cardenal-dark));
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            border-radius: 5px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2.5rem;
+            font-weight: 700;
+            border: 4px solid var(--color-gold); 
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-btn:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 40px rgba(88, 0, 0, 0.9);
+            background: var(--color-cardenal-dark);
+        }
+        
+        /* --- FOOTER (El más solemne) --- */
+        footer {
+            background: linear-gradient(135deg, #101010 0%, #252525 100%);
+            color: #ddd;
+            padding: 5rem 0;
+            border-top: 15px solid var(--color-gold); 
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3.5rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 3.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--color-gold);
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 4px solid var(--color-cardenal-dark);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Estilo para los enlaces del footer (sin azul) */
+        .footer-section p, .footer-section a {
+            color: #FFECB3; 
+            text-decoration: none;
+            line-height: 2.2; 
+            font-size: 1.05rem;
+            display: block; 
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white; 
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #888;
+        }
+        
+        /* Responsive adjustments for mobile view */
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; letter-spacing: 4px; }
+            .subtitle { font-size: 1.5rem; }
+            .nav-menu { flex-direction: column; gap: 1rem; }
+            .hero-section { padding: 3rem; }
+            .section-title { font-size: 3rem; margin-bottom: 4.5rem;}
+            .cards-grid { grid-template-columns: 1fr; }
+            .vatican-emblem { width: 130px; height: 130px; }
+            .pope-section { padding: 3rem 1.5rem; }
+            .service-btn { padding: 15px 35px; font-size: 1.2rem; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Santa Sede</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#acerca">Acerca</a></li>
-      <li><a href="#noticias">Noticias</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-      <li><a href="#member-management">Registro</a></li>
-      <li><a href="#events">Eventos</a></li>
-    </ul>
-  </nav>
-  <div class="container">
-    <section id="inicio" class="welcome">
-      <h2>Bienvenidos a la Santa Sede</h2>
-      <p>La Santa Sede, corazón de la Iglesia Católica, guía a millones de fieles en todo el mundo desde el Vaticano, promoviendo la fe y la unidad.</p>
-    </section>
-    <section id="acerca" class="about">
-      <h2>Acerca de la Santa Sede</h2>
-      <p>La Santa Sede es la autoridad suprema de la Iglesia Católica, liderada por el Papa. Su misión es promover los valores cristianos, la moral y la unidad, además de desempeñar un papel diplomático en la comunidad internacional.</p>
-      <p>Con una historia milenaria, la Santa Sede continúa siendo un faro de esperanza y guía espiritual para la humanidad.</p>
-    </section>
-    <section id="noticias" class="news">
-      <h2>Noticias</h2>
-      <p><a href="https://docs.google.com/document/d/1YCKoPjdpCqvlNIx5Oy0At_e0aNF6oRbc8j_ZqwxmCpA/edit?usp=sharing" target="_blank">Noticias oficiales</a></p>
-    </section>
-    <section id="contacto" class="contact">
-      <h2>Contacto</h2>
-      <form action="https://formspree.io/f/myzjnkvr" method="POST">
-        <input type="text" name="name" placeholder="Nombre" required>
-        <input type="email" name="email" placeholder="Correo Electrónico" required>
-        <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
-        <button type="submit">Enviar Mensaje</button>
-      </form>
-    </section>
-    <section id="member-management" class="member-management">
-      <h2>Regístrate en nuestra comunidad</h2>
-      <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScRQscqk_VRluYNgqMPQpEkOvOVdlEt2RS4DjNsswfxzoswiQ/viewform?usp=dialog" target="_blank">Haz clic aquí para registrarte</a></p>
-    </section>
-    <section id="events" class="events">
-      <h2>Calendario de Eventos</h2>
-      <iframe src="https://calendar.google.com/calendar/embed?src=93c19ec2ceeb059c1cd92ae435b3bff0a1749ca2604b9b017745f431f7f36289%40group.calendar.google.com&ctz=America%2FBogota" style="border: 0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
-    </section>
-  </div>
-  <footer>
-    <p>© 2025 Santa Sede. Todos los derechos reservados.</p>
-    <p>
-      <a href="https://twitter.com">Twitter</a> |
-      <a href="https://vatican.va">Sitio Oficial</a>
-    </p>
-  </footer>
-  <script>
-    // Smooth scroll para los enlaces de navegación
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="vatican-emblem" title="Sello Apostólico de la Santa Sede"></div>
+                <h1>SANTA SEDE</h1>
+                <p class="subtitle">Estado de la Ciudad del Vaticano | Aeternum Lumen et Veritas (Luz Eterna y Verdad)</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="#inicio">PORTAL OFICIAL</a></li>
+                <li><a href="#santo-padre">MAGISTERIO</a></li>
+                <li><a href="#curia">CURIA ROMANA</a></li>
+                <li><a href="#servicios">SERVICIOS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="hero-section" id="inicio">
+                <h2 class="section-title" style="margin-bottom: 2rem;">Autoridad Universal de la Iglesia</h2>
+                <p class="hero-text">
+                    La Santa Sede es el centro neurálgico de la Fe Católica, la sede episcopal de Roma y el gobierno del Estado de la Ciudad del Vaticano. Este portal sirve como la única fuente autorizada para el Magisterio del Sumo Pontífice, los actos de la Curia Romana y los documentos que rigen la vida eclesial a nivel global.
+                </p>
+                <div style="font-size: 1.9rem; font-weight: 700; color: var(--color-cardenal-dark); margin-top: 4rem; font-family: var(--font-serif); font-style: italic;">
+                    "Ego sum lux mundi." (Yo soy la luz del mundo.)
+                </div>
+                
+                <div style="width: 180px; height: 50px; margin: 3rem auto 0; opacity: 1; background-image: url('FIRMA LEONARDO.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+            </section>
+            
+            <section class="pope-section" id="santo-padre">
+                <div class="pope-image" title="Su Santidad Carlo I"></div>
+                <h2 class="section-title" style="margin-bottom: 1rem; font-size: 3.5rem;">Su Santidad Carlo I</h2>
+                <p style="font-size: 1.6rem; color: var(--color-cardenal-light); font-weight: 700; margin-bottom: 6rem; font-style: italic; font-family: var(--font-serif);">
+                    Sucesor del Príncipe de los Apóstoles | Soberano del Estado Vaticano
+                </p>
+                
+                <h3 style="color: var(--color-cardenal-dark); margin-top: 4rem; margin-bottom: 3rem; font-family: var(--font-serif); font-size: 2.8rem; font-weight: 900;">Magisterio Reciente: Acto de Gobierno</h3>
+                
+                <div class="document-card">
+                    <h4>MOTU PROPRIO</h4>
+                    <p>
+                        Código de Conducta
+                    </p>
+                    <a href="https://docs.google.com/document/d/1-oYDjM-ioTbHQ30fcccJeXbiqrMNTb7SXxAUV1b1ML4/edit?tab=t.0#heading=h.ec00ng6w5vl7" target="_blank" class="service-btn" style="padding: 16px 40px; font-size: 1.2rem; margin-top: 1rem; border-color: white;">
+                        ACCEDER AL TEXTO OFICIAL
+                    </a>
+                </div>
+            </section>
+            
+            <section id="curia">
+                <h2 class="section-title">Dicasterios y Oficinas</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">🗝️</div>
+                        <h3>Secretaría de Estado</h3>
+                        <p>Asistencia directa al Papa y coordinación de las relaciones diplomáticas y la administración de la Curia.</p>
+                        <a href="#" style="color: var(--color-cardenal-light); font-weight: bold; margin-top: 10px;">Ver Competencias &raquo;</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">⚖️</div>
+                        <h3>Tribunales Apostólicos</h3>
+                        <p>Órganos de justicia que aplican el Derecho Canónico bajo la suprema autoridad del Sumo Pontífice.</p>
+                        <a href="#" style="color: var(--color-cardenal-light); font-weight: bold; margin-top: 10px;">Normas Canónicas &raquo;</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🌍</div>
+                        <h3>Evangelización</h3>
+                        <p>Dicasterio clave encargado de la Primera Evangelización y el apoyo a las Iglesias jóvenes en territorios de misión.</p>
+                        <a href="#" style="color: var(--color-cardenal-light); font-weight: bold; margin-top: 10px;">Misión Universal &raquo;</a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="services-section" id="servicios">
+                <h2 class="section-title">Contacto y Documentación Clave</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">📰</div>
+                        <h3>Boletín Diario</h3>
+                        <p>Acceso al registro diario de nombramientos, audiencias, actos de gobierno y comunicados oficiales.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRQscqk_VRluYNgqMPQpEkOvOVdlEt2RS4DjNsswfxzoswiQ/viewform" target="_blank" class="service-btn">Suscribirse</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">📅</div>
+                        <h3>Ceremonias Pontificias</h3>
+                        <p>Calendario oficial de misas, celebraciones litúrgicas y encuentros públicos presididos por Su Santidad.</p>
+                        <button onclick="toggleCalendar()" class="service-btn">Ver Agenda</button>
+                    </div>
+
+                    <div class="card" id="comunidad">
+                        <div class="card-icon">💬</div>
+                        <h3>Foro de Debate Teológico</h3>
+                        <p>Únase a la comunidad oficial de la Santa Sede en Discord para discusiones sobre la fe, la moral y la doctrina.</p>
+                        <a href="https://discord.gg/A7EMcCd549" target="_blank" class="service-btn" style="background: linear-gradient(135deg, #7289da, #4a5c9b); border-color: #7289da;">
+                            UNIRSE AL SERVIDOR (Discord)
+                        </a>
+                    </div>
+                </div>
+                
+                <div id="calendar-container" style="display: none; margin-top: 4rem;">
+                    <div style="background: white; border-radius: 15px; padding: 3rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+                        <h3 style="color: var(--color-cardenal-dark); text-align: center; margin-bottom: 2rem; font-family: var(--font-serif); font-size: 2.2rem;">Calendario Apostólico</h3>
+                        <iframe src="https://calendar.google.com/calendar/embed?src=93c19ec2ceeb059c1cd92ae435b3bff0a1749ca2604b9b017745f431f7f36289%40group.calendar.google.com&ctz=America%2FBogota" 
+                                style="border: 0; width: 100%; height: 550px; border-radius: 10px;" 
+                                frameborder="0" 
+                                scrolling="no">
+                        </iframe>
+                        <button onclick="toggleCalendar()" class="service-btn" style="background: #444; border-color: #333; display: block; margin: 2rem auto 0; font-size: 1.1rem; padding: 14px 40px;">CERRAR</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contacto Oficial</h4>
+                    <p>Estado de la Ciudad del Vaticano<br>
+                    00120 Città del Vaticano</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Mensaje al Santo Padre</h4>
+                    <p style="line-height: 1.5; margin-bottom: 0.5rem; color: white;">
+                        Para correspondencia directa:
+                    </p>
+                    <p style="color: var(--color-gold); font-weight: 700; font-size: 1.1rem; line-height: 1.5;">
+                        <a href="mailto:piusxiivatican.va@gmail.com" target="_blank" style="color: var(--color-gold); font-weight: 700; text-decoration: underline;">
+                            piusxiivatican.va@gmail.com
+                        </a>
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Instituciones Vínculo</h4>
+                    <a href="#">Vatican News</a>
+                    <a href="#">L'Osservatore Romano</a>
+                    <a href="#">Museos Vaticanos</a>
+                    <a href="#">Academia Pontificia</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Archivos y Leyes</h4>
+                    <a href="#">Código de Derecho Canónico</a>
+                    <a href="#">Documentos del Concilio</a>
+                    <a href="https://juanmiguel-scv.github.io/Recursos-Eclesi-sticos" target="_blank">ARCHIVO SECRETO APOSTÓLICO</a>
+                    <a href="#">Reglamento Jurídico Estatal</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Santa Sede. Todos los derechos reservados. | Aviso Legal y de Confidencialidad.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navHeight = document.querySelector('nav').offsetHeight;
+
+        // Mostrar/Ocultar Calendario
+        function toggleCalendar() {
+            const calendar = document.getElementById('calendar-container');
+            if (calendar.style.display === 'none') {
+                calendar.style.display = 'block';
+                calendar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                calendar.style.display = 'none';
+            }
+        }
+
+        // Manejo de scroll para la navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - navHeight - 30;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animación de entrada al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.transitionDelay = entry.target.dataset.delay || '0s';
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .hero-section, .pope-section, .document-card').forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(40px)';
+            el.style.transition = 'all 1.5s cubic-bezier(0.23, 1, 0.32, 1)'; 
+            el.dataset.delay = `${index * 0.2}s`; 
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
